@@ -24,7 +24,6 @@ HugeInt::HugeInt(int n){
 
 vector<int> HugeInt::operator+(const HugeInt &b){
 	vector<int> result;
-	int i;
 	if(num.size()>=b.num.size()){
 		for(int i=0;i<num.size();i++){
 			if(i>=b.num.size()){
