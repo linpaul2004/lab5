@@ -2,6 +2,7 @@
 #define HUGE
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 class HugeInt{
@@ -9,14 +10,14 @@ class HugeInt{
 	friend istream&operator>>(istream&,HugeInt&);
 public:
 	HugeInt();
-	HugeInt(char *);
+	HugeInt(string);
 	HugeInt(int);
 	vector<int> operator+(const HugeInt&);
 	vector<int> operator-(const HugeInt&);
 	void operator=(const vector<int> );
 private:
 	vector<int> num;
-	int input;
+	string input;
 	int digit(int);
 };
 #endif

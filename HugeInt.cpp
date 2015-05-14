@@ -6,10 +6,8 @@ HugeInt::HugeInt(){
 	num.push_back(0);
 }
 
-HugeInt::HugeInt(char *n){
-	int total;
-	for(total=0;n[total]!='\0';total++);
-	for(int i=total-1;i>=0;i--){
+HugeInt::HugeInt(string n){
+	for(int i=n.size()-1;i>=0;i--){
 		num.push_back(n[i]-'0');
 	}
 }
@@ -84,10 +82,8 @@ ostream &operator<<(ostream &out,const HugeInt &a){
 istream &operator>>(istream &in,HugeInt &a){
 	a.num.clear();
 	in >> a.input;
-	int n=a.input;
-	for(int i=0;i<a.digit(a.input);i++){
-		a.num.push_back(n%10);
-		n/=10;
+	for(int i=a.input.size()-1;i>=0;i--){
+		a.num.push_back(a.input[i]-'0');
 	}
 	return in;
 }
